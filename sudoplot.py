@@ -49,7 +49,7 @@ try:
     st.sidebar.header("控制台")
     date_range = st.sidebar.slider("日期选择", df['Timestamp'].min().date(), df['Timestamp'].max().date(),
                                    (df['Timestamp'].min().date(), df['Timestamp'].max().date()))
-    speed = st.sidebar.slider("播放速度", 0.01, 0.5, 0.1)
+    speed = st.sidebar.slider("播放速度 (秒/帧)", min_value=0.01, max_value=3.0, value=0.2, step=0.01)
     start_btn = st.sidebar.button("开始实时演化 🚀")
 
     # 数据过滤
